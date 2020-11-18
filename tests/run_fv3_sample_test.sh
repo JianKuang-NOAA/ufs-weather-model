@@ -29,8 +29,10 @@ export TEST_LOG=${RUNDIR}/${TEST_NAME}.log
 source atparse.bash
 #source edit_inputs.sh
 
-# go to RUNDIR
+#baseline output
+RTPWD=/work/noaa/nems/emc.nemspara/RT/NEMSfv3gfs/develop-20201103/INTEL
 
+# go to RUNDIR
 mkdir -p ${RUNDIR}
 cd $RUNDIR
 
@@ -39,7 +41,7 @@ cd $RUNDIR
 ####################################
 
 # FV3 executable:
-cp ${UFS_REPO}/build_$TEST_NAME/ufs_model .
+cp ${UFS_REPO}/build_$TEST_NAME/ufs_model fv3.exe
 
 # modulefile for FV3:
 cp ${UFS_REPO}/modulefiles/${MACHINE_ID}/fv3 modules.fv3
