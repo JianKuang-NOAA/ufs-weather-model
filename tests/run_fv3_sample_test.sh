@@ -10,7 +10,6 @@ export RUNDIR_ROOT=/work/noaa/marine/Jian.Kuang/dataroot/stmp/jkuang
 export TEST_NAME=fv3_ccpp_control
 # ? name
 export MACHINE_ID=orion.intel
-
 # change to "test_vars.sh"
 #source default_vars.sh
 source sampletest_vars.sh
@@ -79,7 +78,7 @@ fi
 atparse < ${UFS_REPO}/tests/parm/${NEMS_CONFIGURE:-nems.configure} > nems.configure
 
 ulimit -s unlimited
-mpiexec -n ${TASKS} ./fv3.exe >out 2> >(tee err >&3)
+mpiexec -n ${TASKS} fv3.exe >out 2> >(tee err >&3)
 
 elapsed=$SECONDS
 echo "Elapsed time $elapsed seconds. Test ${TEST_NAME}"
